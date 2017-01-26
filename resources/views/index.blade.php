@@ -6,13 +6,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-<div class="container">
-  <div class="row text-center">
-    <h1>Тестовое задание</h1>
-  </div>
-</div>
-
-
+    <div class="container">
+      <div class="row">
+        <h1>Вывод информации из базы данных</h1>
+          <table class="table table-hover table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Club</th>
+                <th>Permission</th>
+              </tr>
+            </thead>
+            <tbody>
+        @foreach($customers as $customer)  
+              <tr>
+                <td>{{ $customer->id }}</td>
+                <td>{{ $customer->name }}</td>
+                <td>{{ $customer->tel }}</td>
+                <td>{{ $customer->email }}</td>
+                <td>{{ $customer->club }}</td>
+                <td>{{ $customer->perm }}</td>
+              </tr>
+        @endforeach
+            <tbody>
+          </table>
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
